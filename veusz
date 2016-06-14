@@ -1,0 +1,15 @@
+#!/bin/bash
+
+IP=$1
+
+# Check if socat is running
+n=$(ps aux | grep socat | wc -l)
+
+if [ $n -gt 1 ]; then
+    true
+else
+    socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"&
+fi
+
+# Start docker
+docker run --rm -e DISPLAY=$IP:0 -i -t -v $HOME/Docker/share:/share --name veusz brunetto/docker-veusz-1.24
