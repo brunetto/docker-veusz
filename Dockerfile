@@ -18,7 +18,7 @@ MAINTAINER Brunetto Ziosi <brunetto.ziosi@gmail.com>
 # Install needed packages.
 RUN apt-get update --quiet && apt-get install --yes \
     wget git build-essential xvfb python-numpy python-sip python3-sip sip-dev pyqt4-dev-tools \
-    python-pyside.qtcore python-qt4-dev libqt4-dev qt4-dev-tools \
+    python-pyside.qtcore python-qt4-dev libqt4-dev qt4-dev-tools python-simplejson \
     && apt-get clean && rm -rf /var/lib/apt/lists/*
 
 # Download JSON import plugin and download build and install Veusz
