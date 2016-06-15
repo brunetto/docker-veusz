@@ -35,5 +35,6 @@ RUN mkdir /share \
 RUN apt-get autoremove --yes && apt-get purge --yes wget git
 
 # Default command.
+#ENTRYPOINT ["/bin/bash"]
 ENTRYPOINT ["/usr/local/bin/veusz"]
-CMD ["--plugin /plugins/veuszImportJSON.py"]
+CMD ["--plugin=/plugins/veuszImportJSON.py"]
