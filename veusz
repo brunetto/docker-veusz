@@ -12,4 +12,4 @@ else
 fi
 
 # Start docker
-docker run --rm -e DISPLAY=$IP:0 -i -t -v $HOME/Docker/share:/share --name veusz brunetto/docker-veusz-1.24
+docker run --rm -e DISPLAY=$IP:0 -i -t -v $HOME/Docker/share:/share --name veusz brunetto/docker-veusz
